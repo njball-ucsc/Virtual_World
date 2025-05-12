@@ -434,12 +434,15 @@ function tick(currentTime) {
 }
 
 function handleCameraMovement() {
-    if (keysPressed['w']) camera.moveForward();
-    if (keysPressed['s']) camera.moveBackward();
-    if (keysPressed['a']) camera.moveLeft();
-    if (keysPressed['d']) camera.moveRight();
-    if (keysPressed['q']) camera.panLeft(); 
-    if (keysPressed['e']) camera.panRight(); 
+    const moveSpeed = 10;
+    const panSpeed = 2;
+
+    if (keysPressed['w']) camera.moveForward(moveSpeed * deltaTime);
+    if (keysPressed['s']) camera.moveBackward(moveSpeed * deltaTime);
+    if (keysPressed['a']) camera.moveLeft(moveSpeed * deltaTime);
+    if (keysPressed['d']) camera.moveRight(moveSpeed * deltaTime);
+    if (keysPressed['q']) camera.panLeft(panSpeed * deltaTime); 
+    if (keysPressed['e']) camera.panRight(panSpeed * deltaTime); 
 }
 
 // ----------------------------------------------------------------------------------------------------------------------------------
